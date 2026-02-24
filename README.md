@@ -25,6 +25,7 @@ streamlit run app.py
 How It Works
 
 Working Process:-
+
 1)Upload a PDF document
 
 2)The app extracts text and splits it into chunks (500 characters, 50 overlap)
@@ -36,6 +37,7 @@ Working Process:-
 5)The LLM generates an answer using the retrieved context
 
 Tech Stack
+
 1)Streamlit — Frontend interface
 
 2)Gemini — Embeddings and language model
