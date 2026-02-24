@@ -1,47 +1,34 @@
-# RAG-Resume
-FAQ Bot is a Streamlit-based RAG application that lets users upload PDFs and ask questions in natural language. It chunks documents, stores embeddings in ChromaDB, retrieves relevant context via semantic search, and uses Gemini to generate accurate answers, with real-time token usage tracking.
+#FAQ Bot
 
+A Streamlit app that lets you upload a PDF and ask questions about it using RAG.
 
-FAQ Bot
+## Features
 
-An AI-powered Streamlit application that allows users to upload a PDF and ask questions about its contents using a Retrieval-Augmented Generation (RAG) pipeline. The app converts documents into semantic embeddings, retrieves relevant context, and generates accurate answers in a conversational interface.
+- 📄 **PDF Upload** — Upload any PDF document
+- ✂️ **Auto Chunking** — Splits document into searchable pieces
+- 🔍 **Semantic Search** — Finds relevant chunks using embeddings
+- 💬 **Chat Interface** — Conversational Q&A with memory
+- 📊 **Token Counter** — Track API usage in real-time
 
-Features
+## Run
 
-📄 PDF Upload — Upload any PDF document for instant processing
-
-✂️ Auto Chunking — Automatically splits the document into searchable segments
-
-🔍 Semantic Search — Retrieves relevant chunks using vector embeddings
-
-💬 Chat Interface — Interactive conversational Q&A with context memory
-
-📊 Token Counter — Monitor API/token usage in real time
-
-Run
+```bash
 cd 03-projects/15_faq_bot
 pip install -r requirements.txt
 streamlit run app.py
-How It Works
+```
 
-Working Process:-
+## How It Works
 
-1)Upload a PDF document
+1. Upload a PDF
+2. App extracts text and chunks it (500 chars, 50 overlap)
+3. Each chunk is embedded and stored in ChromaDB
+4. Ask questions → semantic search finds relevant chunks
+5. LLM generates answer based on retrieved context
 
-2)The app extracts text and splits it into chunks (500 characters, 50 overlap)
+## Tech Stack
 
-3)Each chunk is converted into embeddings and stored in ChromaDB
-
-4)When a question is asked, semantic search retrieves the most relevant chunks
-
-5)The LLM generates an answer using the retrieved context
-
-Tech Stack
-
-1)Streamlit — Frontend interface
-
-2)Gemini — Embeddings and language model
-
-3)ChromaDB — Vector database for semantic retrieval
-
-4)PyPDF2 — PDF text extraction
+- **Streamlit** — UI
+- **Gemini** — Embeddings + LLM
+- **ChromaDB** — Vector storage
+- **PyPDF2** — PDF parsing
